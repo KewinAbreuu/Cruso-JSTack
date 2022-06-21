@@ -11,7 +11,8 @@
   "author": "Kewin Abreu",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
