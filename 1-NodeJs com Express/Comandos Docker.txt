@@ -1,0 +1,8 @@
+docker image ls - lista todas as imgens instaladas
+docker run --name pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres (CRIA CONTAINER POSTGRES E JA INSTALA A IMAGEM AUTOMATICAMENTE)
+docker ps (Ver se o container ta criado)
+docker stop pg (Para de rodar o container pg)
+docker ps -a (Ver todos os container)
+docker start pg (Inicia o container)
+docker rmi postgres (Apaga a imagem)
+docker container rm pg (apaga o container) 
