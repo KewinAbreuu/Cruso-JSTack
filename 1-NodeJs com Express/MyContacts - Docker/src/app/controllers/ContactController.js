@@ -17,7 +17,7 @@ class ContactController {
   }
 
   async store (request, response) {
-    const { id, name, email } = request.body
+    const { id, name, email, phone, category_id } = request.body
     // Validar campo name
     if (!name) {
       return response.status(400).json({ Error: 'Name is required' })
@@ -28,8 +28,8 @@ class ContactController {
       return response.status(400).json({ Error: 'Email already Exists' })
     }
     // Se passar nas validações, cria um novo usuario
-    const contact = ContactRepository.create({
-      id, name, email
+    const contact = await ContactRepository.create({
+      id, name, email, phone, category_id
     })
     response.json(contact)
   }

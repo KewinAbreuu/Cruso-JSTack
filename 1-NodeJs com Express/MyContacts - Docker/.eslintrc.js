@@ -11,6 +11,8 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    'prefer-const': 'off'
+    'prefer-const': 'off',
+    camelcase: 'off',
+    quotes: 'OFF'
   }
 }

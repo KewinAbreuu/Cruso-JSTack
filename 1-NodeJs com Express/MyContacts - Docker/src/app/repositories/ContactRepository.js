@@ -1,3 +1,5 @@
+const db = require('../../database')
+
 let contacts = [
   {
     id: 'a1',
@@ -12,34 +14,29 @@ let contacts = [
 ]
 
 class ContactRepository {
-  findAll () {
-    return new Promise((resolve) => {
-      resolve(contacts)
-    })
+  async findAll () {
+    const rows = await db.query(`SELECT * FROM contacts ORDER BY name ASC`)
+    return rows
   }
 
-  findById (id) {
-    return new Promise((resolve) => resolve(
-      contacts.find((contact) => contact.id === id)
-    ))
+  async findById (id) {
+    const [row] = await db.query(`SELECT * FROM contacts WHERE id = $1`, [id])
+    return row
   }
 
-  findByEmail (email) {
-    return new Promise((resolve) => resolve(
-      contacts.find((contact) => contact.email === email)
-    ))
+  async findByEmail (email) {
+    const [row] = await db.query(`SELECT * FROM contacts WHERE email = $1`, [email])
+    return row
   }
 
-  create ({ id, name, email }) {
-    return new Promise((resolve) => {
-      const newContact = {
-        id,
-        name,
-        email
-      }
-      contacts.push(newContact)
-      resolve(newContact)
-    })
+  async create ({ name, email, phone, category_id }) {
+    const [row] = await db.query(`
+    INSERT INTO contacts (name, email, phone, category_id)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *
+    `, [name, email, phone, category_id])
+
+    return row
   }
 
   delete (id) {
