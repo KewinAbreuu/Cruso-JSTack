@@ -36,7 +36,7 @@ class ContactController {
 
   async update (request, response) {
     const { id } = request.params
-    const { name, email } = request.body
+    const { name, email, phone, category_id } = request.body
     // Verifica sem existe esse usuario
     const contactExists = await ContactRepository.findById(id)
     if (!contactExists) {
@@ -52,7 +52,7 @@ class ContactController {
       return response.status(400).json({ Error: 'Email already' })
     }
     // Se passar nas verificações ele faz o update
-    const contact = await ContactRepository.update(id, { name, email })
+    const contact = await ContactRepository.update(id, { name, email, phone, category_id })
     response.json(contact)
   }
 

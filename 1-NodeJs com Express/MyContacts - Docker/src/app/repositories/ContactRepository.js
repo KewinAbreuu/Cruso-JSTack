@@ -1,18 +1,5 @@
 const db = require('../../database')
 
-let contacts = [
-  {
-    id: 'a1',
-    name: 'kewin',
-    email: 'mail@mail.com'
-  },
-  {
-    id: 'a2',
-    name: 'jose',
-    email: 'jose@mail.com'
-  }
-]
-// git
 class ContactRepository {
   async findAll () {
     const rows = await db.query(`SELECT * FROM contacts ORDER BY name ASC`)
@@ -39,27 +26,21 @@ class ContactRepository {
     return row
   }
 
-  delete (id) {
-    return new Promise((resolve) => {
-      contacts = contacts.filter((contact) => contact.id !== id)
-      resolve()
-    })
+  async delete (id) {
+    const deleteOp = await db.query(`
+    DELETE FROM contacts
+    WHERE id= $1`, [id])
+    return deleteOp
   }
 
-  update (id, { name, email }) {
-    return new Promise((resolve) => {
-      const updatedContact = {
-        id,
-        name,
-        email
-      }
-
-      contacts = contacts.map((contact) => (
-        contact.id === id ? updatedContact : contact
-      ))
-
-      resolve(updatedContact)
-    })
+  async update (id, { name, email, phone, category_id }) {
+    const [row] = await db.query(`
+      UPDATE contacts
+      SET name = $1, email = $2, phone = $3, category_id = $4
+      WHERE id = $5
+      RETURNING *
+    `, [name, email, phone, category_id, id])
+    return row
   }
 }
 

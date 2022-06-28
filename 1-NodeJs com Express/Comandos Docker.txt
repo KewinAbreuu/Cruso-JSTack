@@ -6,3 +6,8 @@ docker ps -a (Ver todos os container)
 docker start pg (Inicia o container)
 docker rmi postgres (Apaga a imagem)
 docker container rm pg (apaga o container) 
+//
+docker exec -it pg bash (Abre o container)
+psql -U root(nome do usuario) (LOGA NO POSTGRES)
+\l (LISTA AS BASES DE DADOS)
+\c mycontacts (nome da base de dados) (CONECTA A UMA BASE DE DADOS)

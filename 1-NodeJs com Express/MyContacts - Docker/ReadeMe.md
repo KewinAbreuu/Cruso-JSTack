@@ -1,8 +1,8 @@
 #npm init -y
  -Inicia projeto com nodejs
 
-#npm install express -D
-  -Instala o express como dependencia de desenvolvimento
+#npm install express
+  -Instala o express
 
 #npx eslint --init
   -Configuração do eslint
