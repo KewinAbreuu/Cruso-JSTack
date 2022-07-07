@@ -7,9 +7,8 @@ docker start pg (Inicia o container)
 docker rmi postgres (Apaga a imagem)
 docker container rm pg (apaga o container) 
 
-////////
+
 docker exec -it pg bash 
 psql -U root (logar no postgress) (pode executar o sql)
 \l (lista as base de dados)
 \c 'nome da base' conecta em uma base de dados (dps disso pode criar as tabelas)
-
