@@ -33,8 +33,8 @@ const includesArray = array.includes('React'); --> true
 
 <p>Verifica se uma string começa com alguma sequencia de caracteres</p>
 
-[x] Devolve true ou false
-[x] CaseSensitive
+- [x] Devolve true ou false
+- [x] CaseSensitive
 
 Exemplos:
 
