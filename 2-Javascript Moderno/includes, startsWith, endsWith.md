@@ -1,10 +1,11 @@
-## Funções Javascript </hr>
+## 💻 Funções Javascript </hr>
 
-## Includess </hr>
+## 🔥 Includess </hr>
 <p>Verifica se dentro de uma string ou array existe alguma string que a gnt ta passado dentro dela</p>
-[x] Devolve true ou false
-[x] CaseSensitive
-[x] No array, precisa passar o nome inteiro que ta dentro de cada posição do array
+
+- [x] Devolve true ou false
+- [x] CaseSensitive
+- [x] No array, precisa passar o nome inteiro que ta dentro de cada posição do array
 
 Exemplo em string:
 
@@ -28,7 +29,7 @@ const includesArray = array.includes('Rea'); --> false
 const includesArray = array.includes('React'); --> true
 ````
 
-## startsWith </hr>
+## 🔥 startsWith </hr>
 
 <p>Verifica se uma string começa com alguma sequencia de caracteres</p>
 
@@ -46,12 +47,12 @@ const StartWith = tech.startsWith('Node'); --> true
 const StartWith = tech.startsWith('node'); --> false
 ````
 
-## endsWith </hr>
+## 🔥 endsWith </hr>
 
 <p>Verifica se uma string termina com alguma sequencia de caracteres</p>
 
-[x] Devolve true ou false
-[x] CaseSensitive
+- [x] Devolve true ou false
+- [x] CaseSensitive
 
 Exemplos:
 
