@@ -14,7 +14,7 @@ export default function Home () {
 
             <Header>
               <strong>3 contatos</strong>
-              <a href="/">Novo contato</a>
+              <a href="/new">Novo contato</a>
             </Header>
 
             <LisContainer>

@@ -7,7 +7,7 @@ import arrow from '../../assets/images/arrow.svg'
 export default function PageHeader ({ title }) {
   return (
     <Container>
-      <Link tp="/">
+      <Link to="/">
         <img src={arrow} alt="Back"/>
         <span>Voltar</span>
       </Link>
