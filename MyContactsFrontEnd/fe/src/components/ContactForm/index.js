@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types'
+
 import FormGroup from '../FormGroup'
-import { Form } from './style'
+import { Form, ButtonContainer } from './style'
 
 import Input from '../Input'
 import Select from '../Select'
 import Button from '../Button'
 
-export default function ContactForm () {
+export default function ContactForm ({ buttonLabel }) {
   return (
     <Form>
       <FormGroup>
@@ -25,7 +27,14 @@ export default function ContactForm () {
           <option value="123">Instagram</option>
         </Select>
       </FormGroup>
-      <Button type="submit">Salvar alterações</Button>
+
+      <ButtonContainer>
+         <Button type="submit">{buttonLabel}</Button>
+      </ButtonContainer>
     </Form>
   )
+}
+
+ContactForm.propTypes = {
+  buttonLabel: PropTypes.string.isRequired
 }

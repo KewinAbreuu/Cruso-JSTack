@@ -1,12 +1,17 @@
+import { Link } from 'react-router-dom'
+
 import { Container, Header, LisContainer, Cards, InputSearchContainer } from './style'
 
 import arrow from '../../assets/images/arrow.svg'
 import edit from '../../assets/images/edit.svg'
 import trash from '../../assets/images/trash.svg'
 
+import Modal from '../../components/modal'
+
 export default function Home () {
   return (
       <Container>
+        <Modal danger />
 
       <InputSearchContainer>
         <input type="text" placeholder='Pesquise pelo nome...'/>
@@ -14,7 +19,7 @@ export default function Home () {
 
             <Header>
               <strong>3 contatos</strong>
-              <a href="/new">Novo contato</a>
+              <Link to="/new">Novo contato</Link>
             </Header>
 
             <LisContainer>
@@ -38,9 +43,9 @@ export default function Home () {
                 </div>
 
                   <div className="actions">
-                    <a href="#">
+                    <Link to="/edit/123">
                       <img src={edit} alt="edit"/>
-                    </a>
+                    </Link>
                     <button type="button">
                       <img src={trash} alt="delete"/>
                     </button>
