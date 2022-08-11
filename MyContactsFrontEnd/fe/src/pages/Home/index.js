@@ -6,12 +6,12 @@ import arrow from '../../assets/images/arrow.svg'
 import edit from '../../assets/images/edit.svg'
 import trash from '../../assets/images/trash.svg'
 
-import Modal from '../../components/modal'
+// import Modal from '../../components/modal'
 
 export default function Home () {
   return (
       <Container>
-        <Modal danger />
+        {/* <Modal danger /> */}
 
       <InputSearchContainer>
         <input type="text" placeholder='Pesquise pelo nome...'/>
